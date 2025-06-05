@@ -2,9 +2,15 @@ const express = require('express')
 const rateLimit = require('express-rate-limit')
 const path = require('path')
 const fileRoutes = require('./routes/files')
+const fs = require('fs')
 
 const app = express()
 const PORT = 3000
+
+const uploadDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
 
 const limiter = rateLimit({  // to limit DDoS attacks
   windowMs: 15 * 60 * 1000,
