@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "4770d974-e72c-45bf-a0de-eefda237be58",
+		"name": "file_upload_system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20071565"
+	},
+	"item": [
+		{
+			"name": "getFile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/files/:filename",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"files",
+						":filename"
+					],
+					"variable": [
+						{
+							"key": "filename",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postUploadFile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/jishnu/Downloads/BilledStatements_3923_01-06-25_14.00.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}/upload",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
